@@ -17,7 +17,7 @@ const app = express();
 
 
 app.use(cors({ 
-  origin: ["http://localhost:5173","https://your-frontend.vercel.app"],
+  origin: ["http://localhost:5173","route-wise-five.vercel.app"],
   credentials: true
 }));
 
