@@ -26,7 +26,7 @@ export default function CentrePage() {
           variant="contained" 
           size="large"
           onClick={()=>{
-            fetch("http://localhost:5000/check-auth",{
+            fetch("https://routewise-7b7p.onrender.com/check-auth",{
               credentials: "include"
             })
             .then(res=>res.json())
@@ -88,7 +88,7 @@ export default function CentrePage() {
       <CardActionArea>
         <CardContent sx={{ 
     textAlign: "center",
-    display: "flex",
+    display: "flex", 
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",

@@ -16,16 +16,16 @@ export default function SignUpCard({username,email,password,setsignup}) {
 
   const handleSignup = async () => {
   try {
-    await axios.post("http://localhost:5000/signup", {
+    await axios.post("https://routewise-7b7p.onrender.com/signup", {
       username,
       email,
       password
     }, { withCredentials: true });
     //even after signing up, it was still rendering to /login page because the / page is protected and allows only loggedin ones 
 //so after signing up it renders to / page, we again make the login part go ok with credentials 
-    await axios.post("http://localhost:5000/login", {
+    await axios.post("https://routewise-7b7p.onrender.com/login", {
       email,
-      password
+      password 
     }, { withCredentials: true });
 
     showSnackbar("You have been successfully registered 🎉", "success");
