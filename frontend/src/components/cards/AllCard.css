@@ -1,0 +1,73 @@
+.startCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+}
+.cardOne{
+  width: 500px;
+}
+.cardTwo{
+  width: 500px;
+}
+.cardThree{
+  width: 500px;
+}
+.cardFour{
+  width: 500px;
+}
+.cardFive{
+  width: 500px;
+}
+.MuiCardContent-root{
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.MuiButton-contained{
+  background-color: #11adf5!important;
+  border: 1px solid black !important;
+  border-radius: 25px !important;
+}
+.MuiCardActions-root{
+  justify-content: center;
+}
+
+.MuiTypography-root.beginning{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+}
+.MuiRadioGroup-root{
+  display: flex;
+  justify-content: center;
+}
+.MuiToggleButtonGroup-root{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+} 
+.finalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+
+.finalRow h6 {
+  font-weight: 600;
+  margin: 0;
+}
+
+.finalRow p {
+  margin: 0;
+  font-weight: 500;
+  color: #000000;
+}

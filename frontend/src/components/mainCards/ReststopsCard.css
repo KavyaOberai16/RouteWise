@@ -1,0 +1,35 @@
+.thirdCard{
+    border: 1px solid black;
+    margin-top: 2%;
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;   /* allows horizontal scroll */
+    width: 100%;
+    max-width: 1100px;
+    background:rgba(240,248,255,0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    padding: 3px;
+} 
+.restCard{
+    width: 300px;
+    /* because in above we hv put as flex, which shrinks and does not allow external width,so felx-shrink will prevent that */
+    flex-shrink: 0; 
+}
+.restSection {
+  width: 1100px;
+  margin-top: 2%;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: larger;
+  border-bottom: 3px solid black;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}

@@ -1,0 +1,21 @@
+.loginCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    gap: 25px;
+}
+.form{
+    width: 500px; 
+}
+.btn{
+  background-color: #11adf5!important;
+  border: 1px solid black !important;
+  border-radius: 25px !important;
+  color: white !important;
+}
+
+

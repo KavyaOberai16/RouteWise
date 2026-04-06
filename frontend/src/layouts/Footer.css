@@ -1,0 +1,32 @@
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    padding: 3;
+}
+.icons{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.footerSubOne:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.icons:hover{
+    cursor: pointer;
+}
+.iconOne:hover{
+    font-size: larger;
+}
+.iconTwo:hover{
+    font-size: larger;
+}
+.iconThree:hover{
+    font-size: larger;
+}
