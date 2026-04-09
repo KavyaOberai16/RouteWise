@@ -7,7 +7,7 @@ export default function ProtectedRoute({children}){
     const [isAuth, setAuth ] = useState(false);
 
     useEffect(()=>{
-        fetch("http://localhost:5000/check-auth",{
+        fetch("https://routewise-7b7p.onrender.com/check-auth",{
             method:"GET",
             credentials: "include"
             })
