@@ -16,7 +16,7 @@ import cookieParser from 'cookie-parser';
 const app = express();
 
 app.use(cors({
-  origin: true,
+  origin: "https://route-wise-git-main-kavya4.vercel.app",
   credentials: true
 }));
 
