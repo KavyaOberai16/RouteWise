@@ -29,10 +29,10 @@ export default function Navbar() {
 
     //below we are callin to check if token for getting to log in exist or not
     useEffect(()=>{
-      fetch("http://localhost:5000/check-auth",{
+      fetch("https://routewise-7b7p.onrender.com/check-auth",{
         credentials: "include"
     })
-    .then(res=>res.json())
+    .then(res=>res.json()) 
     .then(data=> 
     {setisAuth(data.loggedIn); //yaha par auth true ho jaega
     });
@@ -41,7 +41,7 @@ export default function Navbar() {
 
     //calling the logout api
     const handleChange = async()=>{
-      await axios("http://localhost:5000/logout",{
+      await axios("https://routewise-7b7p.onrender.com/logout",{
         method:"POST",
         withCredentials: true 
       });
