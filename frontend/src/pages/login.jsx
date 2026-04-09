@@ -22,11 +22,18 @@ export default function LoginCard({email,password,setlogin}) {
       { withCredentials: true } // VERY IMPORTANT (for cookies)
     );
 
-    showSnackbar("Welcome Back 😊", "success");
-    navigate("/");
+     const data = await res.json();
+
+    if (data.loggedIn) {
+      showSnackbar("Welcome Back 😊", "success");
+      navigate("/");
+    } else {
+      showSnackbar("Login failed😶", "error");
+    }
+
   } catch (err) {
     showSnackbar("Login failed😶","error");
-  }  
+  }
 };
 
   return (
