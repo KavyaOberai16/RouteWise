@@ -17,7 +17,7 @@ const app = express();
 
 
 app.use(cors({ 
-  origin: ["http://localhost:5173","route-wise-five.vercel.app"],
+  origin: ["http://localhost:5173","https://route-wise-git-main-kavya4.vercel.app"],
   credentials: true
 }));
 
@@ -619,8 +619,8 @@ app.post("/login",async (req,res)=>{
             ("token", //name
             token, //token value called
             {httpOnly:true,
-                sameSite:"lax",
-                secure:false});
+                sameSite:"none",
+                secure:true});
             return res.json({message:"Login successful"});
          }
     }
@@ -632,8 +632,8 @@ app.post("/login",async (req,res)=>{
 app.post("/logout", (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "lax",
-    secure: false
+    sameSite: "none",
+    secure: true
   });
 
   res.json({ message: "Logged out" });
