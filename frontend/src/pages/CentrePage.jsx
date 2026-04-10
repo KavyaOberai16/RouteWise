@@ -26,7 +26,7 @@ export default function CentrePage() {
           variant="contained" 
           size="large"
           onClick={()=>{
-            fetch("https://routewise-7b7p.onrender.com/check-auth",{
+            fetch("/api/check-auth",{
               credentials: "include"
             })
             .then(res=>res.json())

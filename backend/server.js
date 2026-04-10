@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
+import path from 'path';
 
 import express from 'express';
 import cors from 'cors';//cors is downloaded because frontend and backend both hv different ports so in order for backend 
@@ -620,8 +621,9 @@ app.post("/login",async (req,res)=>{
             ("token", //name
             token, //token value called
             {httpOnly:true,
-                sameSite:"none",
-                secure:true});
+                sameSite:"lax",
+                secure:true
+              });
             return res.json({message:"Login successful"});
          }
     }
@@ -633,7 +635,7 @@ app.post("/login",async (req,res)=>{
 app.post("/logout", (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "none",
+    sameSite: "lax",
     secure: true
   });
 
@@ -658,6 +660,14 @@ app.get("/check-auth", async(req,res)=>{
 
 
 
+
+const __dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+});
 
 
 const PORT = process.env.PORT || 5000; //both frontend and backend are on diff ports because frontend react uses vite and backend express 

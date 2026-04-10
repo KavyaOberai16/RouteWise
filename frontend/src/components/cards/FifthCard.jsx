@@ -21,7 +21,7 @@ export default function CardFive({
 
   try {
     // 1️⃣ CALL TRIP API
-    const tripRes = await fetch("https://routewise-7b7p.onrender.com/trip", {
+    const tripRes = await fetch("/api/trip", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -56,7 +56,7 @@ export default function CardFive({
     const [restData, adviceData, placesData, cautionData] = await Promise.all([
 
       // 🍽 REST STOPS
-      fetch("https://routewise-7b7p.onrender.com/restStops", {
+      fetch("/api/restStops", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -69,7 +69,7 @@ export default function CardFive({
       }).then(res => res.json()),
 
       // 🤖 TRIP ADVICE
-      fetch("https://routewise-7b7p.onrender.com/trip-advice", {
+      fetch("/api/trip-advice", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -88,7 +88,7 @@ export default function CardFive({
       }).then(res => res.json()),
 
       // 🗺 PLACES
-      fetch("https://routewise-7b7p.onrender.com/places", {
+      fetch("/api/places", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -102,7 +102,7 @@ export default function CardFive({
       }).then(res => res.json()),
 
       // ⚠️ CAUTION
-      fetch("https://routewise-7b7p.onrender.com/cautionAdvice", {
+      fetch("/api/cautionAdvice", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -17,14 +17,14 @@ export default function LoginCard({email,password,setlogin}) {
  const handleLogin = async () => {
   try {
     await axios.post(
-      "https://routewise-7b7p.onrender.com/login",
+      "/api/login",
       { email, password },
       { withCredentials: true }
     );
 
     // ✅ now check auth
     const res = await fetch(
-      "https://routewise-7b7p.onrender.com/check-auth",
+      "/api/check-auth",
       {
         method: "GET",
         credentials: "include"
