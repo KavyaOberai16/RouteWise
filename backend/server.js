@@ -17,7 +17,7 @@ import cookieParser from 'cookie-parser';
 const app = express();
 
 app.use(cors({
-  origin: true,
+  origin: "https://routewise-1-nqk1.onrender.com",
   credentials: true
 }));
 
