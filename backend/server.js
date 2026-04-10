@@ -572,12 +572,13 @@ const aiJSON = JSON.parse(cleanText);
 app.post("/signup",async (req,res)=>{
   console.log("SIGNUP BODY:", req.body);
     const { username, email, password } = req.body;
+    const cleanEmail = email.trim().toLowerCase();
     if(!username || !email || !password ){ //making sure that no field left empty by user
         return res.status(400).json({message:"All fields required"});
     }
     //in below code we r making sure that no user with same email,username gets signup more than once
    try{
-    const existence = await User.findOne({ email });
+    const existence = await User.findOne({ cleanEmail });
     if(existence){
         return res.status(400).json({message:"User already exists"});
     }
@@ -585,7 +586,7 @@ app.post("/signup",async (req,res)=>{
 
    const newUser = new User({ 
     username,
-    email,
+    email: cleanEmail,
     password: hashedPassword
 });
    await newUser.save();
