@@ -16,9 +16,7 @@ import cookieParser from 'cookie-parser';
 const app = express();
 
 app.use(cors({
-  origin: ["https://route-wise-git-main-kavya4.vercel.app",
-  "https://route-wise-five.vercel.app"
-  ],
+  origin: true,
   credentials: true
 }));
 
@@ -578,7 +576,7 @@ app.post("/signup",async (req,res)=>{
     }
     //in below code we r making sure that no user with same email,username gets signup more than once
    try{
-    const existence = await User.findOne({ cleanEmail });
+    const existence = await User.findOne({ email:cleanEmail });
     if(existence){
         return res.status(400).json({message:"User already exists"});
     }
