@@ -21,7 +21,7 @@ export default function CardFive({
 
   try {
     // 1️⃣ CALL TRIP API
-    const tripRes = await fetch("/api/trip", {
+    const tripRes = await fetch("/trip", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -56,7 +56,7 @@ export default function CardFive({
     const [restData, adviceData, placesData, cautionData] = await Promise.all([
 
       // 🍽 REST STOPS
-      fetch("/api/restStops", {
+      fetch("/restStops", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -69,7 +69,7 @@ export default function CardFive({
       }).then(res => res.json()),
 
       // 🤖 TRIP ADVICE
-      fetch("/api/trip-advice", {
+      fetch("/trip-advice", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -88,7 +88,7 @@ export default function CardFive({
       }).then(res => res.json()),
 
       // 🗺 PLACES
-      fetch("/api/places", {
+      fetch("/places", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -102,7 +102,7 @@ export default function CardFive({
       }).then(res => res.json()),
 
       // ⚠️ CAUTION
-      fetch("/api/cautionAdvice", {
+      fetch("/cautionAdvice", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

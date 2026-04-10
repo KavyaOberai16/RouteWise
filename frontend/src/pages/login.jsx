@@ -17,14 +17,14 @@ export default function LoginCard({email,password,setlogin}) {
  const handleLogin = async () => {
   try {
     await axios.post(
-      "/api/login",
+      "/login",
       { email, password },
       { withCredentials: true }
     );
 
     // ✅ now check auth
     const res = await fetch(
-      "/api/check-auth",
+      "/check-auth",
       {
         method: "GET",
         credentials: "include"

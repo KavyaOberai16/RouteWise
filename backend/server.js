@@ -17,7 +17,7 @@ import cookieParser from 'cookie-parser';
 const app = express();
 
 app.use(cors({
-  origin: "https://routewise-1-nqk1.onrender.com",
+  origin: true,
   credentials: true
 }));
 
@@ -622,7 +622,7 @@ app.post("/login",async (req,res)=>{
             token, //token value called
             {httpOnly:true,
                 sameSite:"lax",
-                secure:true
+                secure:false
               });
             return res.json({message:"Login successful"});
          }
@@ -636,7 +636,7 @@ app.post("/logout", (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
     sameSite: "lax",
-    secure: true
+    secure: false
   });
 
   res.json({ message: "Logged out" });

@@ -29,7 +29,7 @@ export default function Navbar() {
 
     //below we are callin to check if token for getting to log in exist or not
     useEffect(()=>{
-      fetch("/api/check-auth",{
+      fetch("/check-auth",{
         credentials: "include"
     })
     .then(res=>res.json()) 
@@ -41,7 +41,7 @@ export default function Navbar() {
 
     //calling the logout api
     const handleChange = async()=>{
-      await axios("/api/logout",{
+      await axios("/logout",{
         method:"POST",
         withCredentials: true 
       });

@@ -26,7 +26,7 @@ export default function CentrePage() {
           variant="contained" 
           size="large"
           onClick={()=>{
-            fetch("/api/check-auth",{
+            fetch("/check-auth",{
               credentials: "include"
             })
             .then(res=>res.json())

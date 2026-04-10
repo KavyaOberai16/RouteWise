@@ -17,21 +17,21 @@ export default function SignUpCard({username,email,password,setsignup}) {
   const handleSignup = async () => {
     console.log("Sending:", username, email, password);
   try {
-    await axios.post("/api/signup", {
+    await axios.post("/signup", {
       username,
       email,
       password
     }, { withCredentials: true });
     //even after signing up, it was still rendering to /login page because the / page is protected and allows only loggedin ones 
 //so after signing up it renders to / page, we again make the login part go ok with credentials 
-   await axios.post("/api/login", {
+   await axios.post("/login", {
   email,
   password 
 }, { withCredentials: true });
 
 // ✅ CHECK AUTH BEFORE NAVIGATING
 const res = await fetch(
-  "/api/check-auth",
+  "/check-auth",
   {
     credentials: "include"
   }
