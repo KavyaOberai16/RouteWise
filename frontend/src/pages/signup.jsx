@@ -46,9 +46,10 @@ if (data.loggedIn) {
   showSnackbar("Login failed after signup 😣", "error");
 }
 
-  } catch {
-    showSnackbar("Failed to register 😣", "error");
-  }
+  } catch (err) {
+  console.log(err.response?.data); // 👈 THIS LINE
+  showSnackbar(err.response?.data?.message || "Failed to register 😣", "error");
+}
 };
 
   return (
