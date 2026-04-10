@@ -15,6 +15,7 @@ export default function SignUpCard({username,email,password,setsignup}) {
   const { showSnackbar } = useSnackbar();
 
   const handleSignup = async () => {
+    console.log("Sending:", username, email, password);
   try {
     await axios.post("https://routewise-7b7p.onrender.com/signup", {
       username,

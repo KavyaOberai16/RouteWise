@@ -568,6 +568,7 @@ const aiJSON = JSON.parse(cleanText);
 
 // login,signup integration
 app.post("/signup",async (req,res)=>{
+  console.log("SIGNUP BODY:", req.body);
     const { username, email, password } = req.body;
     if(!username || !email || !password ){ //making sure that no field left empty by user
         return res.status(400).json({message:"All fields required"});
