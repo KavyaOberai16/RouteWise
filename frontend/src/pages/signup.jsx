@@ -24,17 +24,27 @@ export default function SignUpCard({username,email,password,setsignup}) {
     }, { withCredentials: true });
     //even after signing up, it was still rendering to /login page because the / page is protected and allows only loggedin ones 
 //so after signing up it renders to / page, we again make the login part go ok with credentials 
-    await axios.post("https://routewise-7b7p.onrender.com/login", {
-      email,
-      password 
-    }, { withCredentials: true });
+   await axios.post("https://routewise-7b7p.onrender.com/login", {
+  email,
+  password 
+}, { withCredentials: true });
 
-    showSnackbar("You have been successfully registered 🎉", "success");
+// ✅ CHECK AUTH BEFORE NAVIGATING
+const res = await fetch(
+  "https://routewise-7b7p.onrender.com/check-auth",
+  {
+    credentials: "include"
+  }
+);
 
-    //it has to head to / page and is alert came quickly it will lag, therefore, we set timeout
-    setTimeout(() => {
-      navigate("/");
-    }, 500);
+const data = await res.json();
+
+if (data.loggedIn) {
+  showSnackbar("You have been successfully registered 🎉", "success");
+  navigate("/");
+} else {
+  showSnackbar("Login failed after signup 😣", "error");
+}
 
   } catch {
     showSnackbar("Failed to register 😣", "error");
