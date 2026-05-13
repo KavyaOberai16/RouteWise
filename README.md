@@ -111,6 +111,7 @@ Hotel booking suggestions
 Save trip history
 Export itinerary as PDF
 Real-time traffic updates
+
 👩‍💻 Author
 
 Kavya Oberai
